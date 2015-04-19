@@ -8,25 +8,21 @@
     tools:context="com.hackru.scsu.pillpal.History"
     android:background="#FFFFFF">
 
-    <TextView
+    <DatePicker
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/search_options"
-        android:id="@+id/textView"
+        android:id="@+id/datePicker"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="75dp"
-        android:textColor="#000000"
-        android:textSize="24sp" />
+        android:layout_marginTop="15dp" />
 
-    <Spinner
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/searchSpinner"
-        android:entries="@array/search_options"
-        android:layout_below="@+id/textView"
+        android:layout_height="300dp"
+        android:layout_alignLeft="@+id/datePicker"
+        android:layout_alignRight="@+id/datePicker"
+        android:id="@+id/scrollView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:spinnerMode="dropdown" />
+        android:layout_marginTop="175dp" />
+
 </RelativeLayout>

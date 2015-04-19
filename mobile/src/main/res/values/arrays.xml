@@ -1,0 +1,13 @@
+<resources>
+    <string-array name="search_options">
+        <item>Pill</item>
+        <item>Date</item>
+    </string-array>
+    <string-array name="pill_names">
+        <item>Pill 1</item>
+        <item>Pill 2</item>
+        <item>Pill 3</item>
+        <item>Pill 4</item>
+        <item>Pill 5</item>
+    </string-array>
+</resources>

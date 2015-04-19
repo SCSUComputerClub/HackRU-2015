@@ -1,17 +1,47 @@
 package com.hackru.scsu.pillpal;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 
 public class History extends ActionBarActivity {
+
+    Spinner search = (Spinner) findViewById(R.id.searchSpinner);
+    ArrayAdapter<CharSequence> searchArrayAdapter = ArrayAdapter.createFromResource(this,
+            R.array.search_options, android.R.layout.simple_spinner_dropdown_item);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
+        search.setAdapter(searchArrayAdapter);
+
+        AdapterView.OnItemSelectedListener onSearch = new AdapterView.OnItemSelectedListener(){
+
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if(i == 0){
+                    Intent intent = new Intent(History.this, SearchByPill.class);
+                    startActivity(intent);
+                }
+                else{
+                    Intent intent = new Intent(History.this, SearchByDate.class);
+                    startActivity(intent);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        };
     }
 
 

@@ -8,25 +8,34 @@
     tools:context="com.hackru.scsu.pillpal.History"
     android:background="#FFFFFF">
 
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pillSpinner"
+        android:entries="@array/pill_names"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="85dp"
+        android:spinnerMode="dropdown" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_alignLeft="@+id/pillSpinner"
+        android:layout_alignRight="@+id/pillSpinner"
+        android:id="@+id/scrollView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="175dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/search_options"
-        android:id="@+id/textView"
+        android:text="@string/search_pill"
+        android:id="@+id/textView2"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="30dp"
         android:textColor="#000000"
-        android:textSize="24sp" />
+        android:textSize="26sp" />
 
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/searchSpinner"
-        android:entries="@array/search_options"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:spinnerMode="dropdown" />
 </RelativeLayout>
