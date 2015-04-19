@@ -4,14 +4,36 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 
 public class SearchByPill extends ActionBarActivity {
+
+    Spinner pill = (Spinner) findViewById(R.id.pillSpinner);
+    ArrayAdapter<CharSequence> pillArrayAdapter = ArrayAdapter.createFromResource(this,
+            R.array.pill_names, android.R.layout.simple_spinner_dropdown_item);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_by_pill);
+        pill.setAdapter(pillArrayAdapter);
+
+        AdapterView.OnItemSelectedListener onSelect = new AdapterView.OnItemSelectedListener(){
+
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        };
     }
 
 
