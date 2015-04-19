@@ -1,19 +1,35 @@
 package com.hackru.scsu.pillpal;
 
 import android.support.v7.app.ActionBarActivity;
+import android.widget.DatePicker;
+import android.widget.DatePicker.OnDateChangedListener;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.Calendar;
+
 
 public class SearchByDate extends ActionBarActivity {
+
+    DatePicker dp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_by_date);
-    }
 
+        dp = (DatePicker) findViewById(R.id.datePicker);
+        Calendar date = Calendar.getInstance();
+
+        dp.init(date.get(Calendar.YEAR), date.get(Calendar.MONTH), date.get(Calendar.DAY_OF_MONTH),
+                new OnDateChangedListener() {
+                    @Override
+                    public void onDateChanged(DatePicker datePicker, int i, int i2, int i3) {
+
+                    }
+                });
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
